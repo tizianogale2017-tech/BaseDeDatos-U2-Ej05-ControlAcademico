@@ -1,6 +1,6 @@
-BaseDeDatos-U1-Ej05-ControlAcademico
+BaseDeDatos-U2-Ej05-ControlAcademico
 
-Base de Datos - Unidad 1 - Ejercicio 5
+Base de Datos - Unidad 2 - Ejercicio 5
 
 Consigna
 
