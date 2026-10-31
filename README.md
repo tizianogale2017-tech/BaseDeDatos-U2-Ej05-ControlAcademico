@@ -23,3 +23,25 @@ Modelar el sistema de gestión académica de una facultad: carreras con su plan 
 ## Resultado
 
 ![Diagrama](captura.png)
+
+---
+
+## Normalización
+
+Se normaliza el documento `Comision` con sus registros de `Alumno_Comision`. En todas las tablas la PK va en la primera columna y las FK al final. Los datos son de ejemplo.
+
+**Forma 0.** Una sola tabla con todo junto. Hay celdas con listas: cada comision puede tener varios registros de alumno comision, y los nombres vienen completos en una sola columna.
+
+![Forma 0](normalizacion/00-forma-0.png)
+
+**1FN.** Se separan nombre y apellido. Cada elemento de la lista pasa a su propia fila y la clave queda compuesta: (`id_comision`, `id_alumno`).
+
+![1FN](normalizacion/01-1fn.png)
+
+**2FN.** Los datos de comision dependen solo de `id_comision` y los de alumno solo de `id_alumno`. Se separan en `Comision` y `Alumno`; `Alumno_Comision` queda con la clave compuesta y lo que depende de ambos.
+
+![2FN](normalizacion/02-2fn.png)
+
+**3FN.** Los datos de `Asignatura`, `Ciclo_Lectivo`, `Profesor`, `Plan_Estudio` y `Carrera` dependen de su propio identificador y no de la PK de comision, así que pasan a tablas aparte. En el modelo final cada tabla usa su id propio.
+
+![3FN](normalizacion/03-3fn.png)
