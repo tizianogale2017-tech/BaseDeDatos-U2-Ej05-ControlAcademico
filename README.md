@@ -45,3 +45,9 @@ Se normaliza el documento `Comision` con sus registros de `Alumno_Comision`. En 
 **3FN.** Los datos de `Asignatura`, `Ciclo_Lectivo`, `Profesor`, `Plan_Estudio` y `Carrera` dependen de su propio identificador y no de la PK de comision, así que pasan a tablas aparte. En el modelo final cada tabla usa su id propio.
 
 ![3FN](normalizacion/03-3fn.png)
+
+---
+
+## SQL
+
+El script `script.sql` crea las tablas con sus claves primarias y foráneas y carga datos de ejemplo. Está probado en SQLite (con `PRAGMA foreign_keys = ON;`).
